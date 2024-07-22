@@ -17,21 +17,22 @@
 ::SOFTWARE.
 set "ver=1"
 @echo off
+cls
 ::REQUIERED FUNCTIONS
 if exist "%systemroot%\System32\Button.bat" if exist "%systemroot%\System32\batbox.exe" if exist "%systemroot%\System32\GetInput.exe" goto skip
 echo Installing requirements...
 echo.
 timeout /t 0 /nobreak >nul
 echo Installing batch gui buttons...
-PowerShell.exe -ExecutionPolicy Bypass -Command "irm 'https://raw.githubusercontent.com/Zapak69/BATCH_GUI_BUTTONS_INSTALL/main/NOGUI_BUTTONS.exe' -UseBasicParsing -OutFile '%temp%\Simply.exe'"
-start %temp%\Simply.exe
+PowerShell.exe -ExecutionPolicy Bypass -Command "irm 'https://raw.githubusercontent.com/Zapak69/BATCH_GUI_BUTTONS_INSTALL/main/NOGUI_BUTTONS.exe' -UseBasicParsing -OutFile '%temp%\gui.exe'"
+start %temp%\gui.exe
 :checkprocess
-tasklist /FI "IMAGENAME eq Simply.exe" 2>NUL | find /I /N "Simply.exe">NUL
+tasklist /FI "IMAGENAME eq gui.exe" 2>NUL | find /I /N "gui.exe">NUL
 if "%ERRORLEVEL%"=="0" (
     timeout /t 3 /nobreak > nul
     goto checkprocess
 )
-del %temp%\Simply.exe >nul
+del %temp%\gui.exe >nul
 echo.
 :skip
 if exist "%programfiles%\WinRAR\WinRAR.exe" goto menu
