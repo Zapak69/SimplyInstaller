@@ -7,6 +7,6 @@ SimplyInstaller is open-source installer made in batch script for installing old
 > WinRAR
 
 ## Supported builds:
-> 14.30 (Chapter 2 Season 4)
+> Season 1 - Season 20
 
 *If you want to add new build, contact me on discord: zippiik*
